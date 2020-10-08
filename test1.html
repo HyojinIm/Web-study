@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>VIXX Leo</title>
+    <title>My Page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
@@ -11,10 +11,37 @@
             background-color: darkgray;
         }
     </style>
+    <script>
+        function nightAndDay(button){
+            var target = document.querySelector('body');
+            var links = document.querySelectorAll('a');
+            if(button.value === 'night'){
+                target.style.backgroundColor = '#333333';
+                target.style.color = 'white';
+                button.value = 'day';
+
+                // for(var a of links){
+                //     a.style.color = 'white';
+                // }
+                links.forEach(function(item){
+                    item.style.color = 'white';
+                })
+            }else{
+                target.style.backgroundColor = '';
+                target.style.color = '';
+                button.value = 'night';
+                
+                for(a of links){
+                    a.style.color = '';
+                }
+            }
+        }
+    </script>
 </head>
 
 <body>
-    <h1>VIXX Leo</h1>
+    <input type="button" value="night" onclick="nightAndDay(this)">
+    <h1>My Page</h1>
     <form action="#">
         <input type="text" name="id" placeholder="id" autofocus pattern="[a-zA-Z].+[0-9]">
         <input type="password" name="pwd" placeholder="password">
@@ -28,7 +55,7 @@
         </ul>
         <div id="article">
             <h2>3</h2>
-            <img src="images/Leo1.jpg" width="100%" alt="VIXX Leo">
+            <img src="images/Leo1.jpg" width="100%" alt="image">
         </div>
     </div>
 </body>
